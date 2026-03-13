@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Feliz Cumpleaños!</title>
+  <style>
+    body {
+      background: #ffe0f0;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      color: #333;
+      padding-top: 50px;
+      min-height: 100vh; /* ocupa toda la pantalla */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background: #ff4081;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 ¡Feliz Cumpleaños,Mashaa! 🎉</h1>
+  <p>Que todos tus deseos se hagan realidad 💖</p>
+<p style="max-width: 600px; margin: 30px auto; font-size: 1.2em; line-height: 1.6;">
+  Hoy celebro no solo tu cumpleaños, sino también la dicha de tenerte en mi vida. 
+  Eres una persona increíble que ilumina cada lugar con tu sonrisa y tu energía, 
+  y me siento afortunada de compartir tantos momentos contigo. Que este nuevo año 
+  que comienzas esté lleno de sueños cumplidos, aventuras inolvidables y alegrías 
+  que te hagan brillar aún más. Gracias por ser tú, por tu amistad, por tu cariño 
+  y por todo lo que aportas a quienes te rodean. ¡Te mereces lo mejor del mundo 
+  y espero que este día sea tan especial como tú lo eres para mí!
+</p>
+
+  <!-- Música favorita -->
+  <audio autoplay controls>
+    <source src="fav.mp4" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- Confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  </script>
+
+  <footer>
+    Con cariño, OSOOO 💖
+  </footer>
+</body>
+</html>
