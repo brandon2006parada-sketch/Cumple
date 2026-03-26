@@ -1,3 +1,3 @@
 git add .
 git commit -m "Actualización"
-git push origin Maine
+git push origin master
