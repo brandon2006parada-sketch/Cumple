@@ -19,8 +19,28 @@
       overflow-x: hidden;
     }
 
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+      animation: rotate 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     h1 {
-      font-size: 2.2em; /* más pequeño para móvil */
+      font-size: 2.2em;
       color: #e61b5f;
       animation: bounce 2s infinite;
       margin-bottom: 1rem;
@@ -88,8 +108,12 @@
       font-size: 0.9em;
     }
 
-    /* 📱 Ajustes para pantallas pequeñas */
     @media (max-width: 600px) {
+      .logo-container img {
+        width: 70px;
+        height: 70px;
+      }
+
       h1 {
         font-size: 1.8em;
       }
@@ -107,6 +131,10 @@
   </style>
 </head>
 <body>
+  <div class="logo-container">
+    <img src="https://static.wikia.nocookie.net/blackclover/images/8/80/Black_Bulls_Logo.png" alt="Logo Toros Negros Black Clover">
+  </div>
+
   <h1>🎂 ¡Feliz Cumpleaños, Mashaa! 🎉</h1>
   <div class="heart-row" aria-label="corazones">💖💖💖</div>
   <p>
@@ -123,7 +151,6 @@
   <p class="bonus">✨ Que este día te traiga alegría, amor y muchas sonrisas. ✨</p>
   <button class="cta" id="celebrateBtn">🎊 ¡Haz explotar la fiesta! </button>
 
-  <!-- Confeti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
     const celebrateBtn = document.getElementById('celebrateBtn');
