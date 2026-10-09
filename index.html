@@ -15,6 +15,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -35,6 +37,47 @@
       font-size: 1em;
       line-height: 1.5;
       padding: 0 10px;
+    }
+
+    .bonus {
+      font-size: 1.1em;
+      color: #6b0f3c;
+      font-weight: bold;
+      margin-top: 0.3rem;
+    }
+
+    .cta {
+      margin: 1rem auto 0;
+      border: none;
+      background: linear-gradient(135deg, #ff4d8d, #ff8a00);
+      color: white;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 12px 22px rgba(255, 77, 141, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 28px rgba(255, 77, 141, 0.4);
+    }
+
+    .heart-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 1.7rem;
+      margin: 0.8rem auto 0;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
     }
 
     audio {
@@ -58,6 +101,9 @@
       p {
         font-size: 0.95em;
       }
+      .bonus {
+        font-size: 1em;
+      }
       footer {
         font-size: 0.8em;
         padding: 10px;
@@ -67,6 +113,7 @@
 </head>
 <body>
   <h1>🎂 ¡Feliz Cumpleaños, Mashaa! 🎉</h1>
+  <div class="heart-row" aria-label="corazones">💖💖💖</div>
   <p>
      Hoy celebro no solo tu cumpleaños, sino también la dicha de tenerte en mi vida. 
   Eres una persona increíble que ilumina a pesar de tu forma oscura de vestir jjj cada lugar con tu sonrisa y tu energía, 
@@ -78,6 +125,9 @@
   Dios te bendiga mucho muchisimo, sobrabundantemente, a ti y a los tuyos!
   </p>
 
+  <p class="bonus">✨ Que este día te traiga alegría, amor y muchas sonrisas. ✨</p>
+  <button class="cta" id="celebrateBtn">🎊 ¡Haz explotar la fiesta! </button>
+
   <!-- Música favorita -->
   <audio autoplay controls>
     <source src="fav.mp3" type="audio/mpeg">
@@ -87,9 +137,21 @@
   <!-- Confeti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
+    const celebrateBtn = document.getElementById('celebrateBtn');
+
+    function launchParty() {
+      confetti({
+        particleCount: 220,
+        spread: 110,
+        origin: { y: 0.6 },
+        colors: ['#ff4d8d', '#ffd166', '#ff8a00', '#7b2cbf', '#06d6a0']
+      });
+    }
+
+    celebrateBtn.addEventListener('click', launchParty);
     confetti({
-      particleCount: 200,
-      spread: 100,
+      particleCount: 180,
+      spread: 90,
       origin: { y: 0.6 }
     });
   </script>
@@ -99,4 +161,3 @@
   </footer>
 </body>
 </html>
-
